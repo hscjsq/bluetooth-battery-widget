@@ -129,3 +129,17 @@
           （右键→设置→「开机自动启动」可直接开关）
 卸载：本包为便携版，无需安装、也没有卸载器。先在「设置 ▸」里取消开机自启、
       右键「退出」关闭程序，再删除整个文件夹即可，无注册表或服务残留。
+
+来源与致谢
+==========
+本工具的 UI 呈现思路（在 Windows 任务栏以「设备简笔画图标 + 电量」展示无线设备
+电量）参考了开源项目 Wireless Device Battery Monitor：
+  作者：krisgfx9
+  仓库：https://github.com/krisgfx9/Wireless-Device-Battery-Monitor
+  许可证：GPL-3.0
+本项目只借鉴上述呈现方式与功能定位，未复制其任何源代码。设备在线判定、电量读取
+（bt_battery.py，基于 Windows SetupAPI / BluetoothAPIs）以及窗口、绘制、动画、
+菜单、报警（bt_widget.py）均为独立实现。上游许可证适用于其自身代码，本项目未将其
+代码纳入本工具。
+其他依赖：Pillow（HPND，图像绘制）、PyInstaller（GPL-2.0-or-later 含打包例外，
+用于生成单文件 exe）。icons 目录中的 5 张设备线稿由使用者提供。

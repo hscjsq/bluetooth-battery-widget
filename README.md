@@ -66,6 +66,20 @@ python -m PyInstaller --noconfirm --clean --onefile --noconsole ^
 | `tb_max_items` | `3` | 横条最多显示几台，其余折叠为 `+N` |
 | `smooth_transition` / `hover_fade` / `hover_tips` | `true` | 过渡动画、天气悬停淡出、设备悬停提示 |
 
+## 来源与致谢
+
+本项目的 **UI 呈现思路**（在 Windows 任务栏以「设备简笔画图标 + 电量」的形式展示无线设备电量）参考了开源项目：
+
+- **Wireless Device Battery Monitor** — 作者 [krisgfx9](https://github.com/krisgfx9)，仓库 <https://github.com/krisgfx9/Wireless-Device-Battery-Monitor>，许可证 **GPL-3.0**。
+
+本项目仅借鉴上述呈现方式与功能定位，**未复制其任何源代码**：设备在线/电量数据由本项目 `bt_battery.py` 基于 Windows SetupAPI / BluetoothAPIs 独立实现，窗口、绘制、动画、菜单与报警逻辑均在 `bt_widget.py` 中独立编写。上游项目的许可证适用于其自身代码，本项目未将其代码纳入本仓库。
+
+其他依赖：
+
+- [Pillow](https://python-pillow.org/)（HPND 许可证）—— 图像绘制。
+- [PyInstaller](https://pyinstaller.org/)（GPL-2.0-or-later，含打包例外）—— 生成单文件 exe。
+- `icons/` 中的 5 张设备线稿由项目使用者提供，按透明底白色线条规格处理。
+
 ## 已知限制
 
 - 外来 Win32 子窗口无法接入 Explorer 的 XAML 原生动画时间线，过渡动画为自绘（20ms 帧、ease-out、交叉淡化），不保证与系统动画完全同步。
