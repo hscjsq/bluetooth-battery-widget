@@ -47,7 +47,6 @@ python -m PyInstaller --noconfirm --clean --onefile --noconsole ^
 | `bt-battery-tray/icons/` | 运行时读取的 5 张设备线稿（蓝牙标识用自绘） |
 | `bt-battery-tray/*.bat`、`start.vbs` | 启动、自检、装依赖、安装版启动辅助脚本 |
 | `图标成品/` | 图标原始稿与预览图 |
-| `A+B-*.png` | 开发过程效果截图；部分为已回退的历史版本，仅作记录 |
 | `快速开始.txt` | 面向新用户的上手指南 |
 | `使用说明.txt` | 完整配置项与实现细节 |
 | `设置开机自启.bat` | 一键写入当前用户启动项 |
@@ -72,4 +71,4 @@ python -m PyInstaller --noconfirm --clean --onefile --noconsole ^
 - 外来 Win32 子窗口无法接入 Explorer 的 XAML 原生动画时间线，过渡动画为自绘（20ms 帧、ease-out、交叉淡化），不保证与系统动画完全同步。
 - 全屏独占窗口（游戏等）会盖住任务栏，此时组件被遮住属正常现象，切回桌面即可看到。
 - 仅支持 Windows，依赖 Windows PnP / SetupAPI / `BluetoothAPIs.dll`。
-- 未指定开源许可。仓库默认私有：源码注释、说明文件与开发截图里含本机设备名和桌面内容，转公开前需先脱敏。
+- 未指定开源许可。仓库默认私有：源码注释与说明文件里含本机设备名等细节，转公开前需先脱敏。

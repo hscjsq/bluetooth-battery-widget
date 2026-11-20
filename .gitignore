@@ -37,6 +37,12 @@ _screen_*.png
 _verify_*.png
 _taskbar_*.png
 
+# 开发过程截图（仅本地保留，不上库）
+A+B-*.png
+_screen_*.png
+_verify_*.png
+_taskbar_*.png
+
 # 编辑器 / 系统
 .vscode/
 .idea/
