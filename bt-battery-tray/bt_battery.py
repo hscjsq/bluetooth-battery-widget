@@ -472,7 +472,7 @@ def infer_device_kind(name: str, classes: set, cod, cfg: dict) -> str:
 
 
 def _channel_base(name: str) -> str:
-    """OMR251 BT1 / BT2 这类多通道设备归一到同一台物理设备。"""
+    """某双通道接收器 这类多通道设备归一到同一台物理设备。"""
     import re
     return re.sub(r"\s*bt\d+\s*$", "", name.lower()).strip()
 
@@ -573,7 +573,7 @@ def read_batteries(cfg: dict) -> list[dict]:
             iid = instance.value
 
             # 建立 ContainerId -> {设备类}：BLE 主节点的真实类别写在同容器的
-            # HID / AudioEndpoint 子节点里，例如 OMR251 BT2 下有 Mouse 节点。
+            # HID / AudioEndpoint 子节点里，例如 示例鼠标 下有 Mouse 节点。
             cid_raw, cid_size = _dev_prop(sa, handle, dev, CONTAINER_ID_KEY, GUID())
             cid = _guid_str(cid_raw) if cid_raw and cid_size == 16 else None
             cls = _reg_string(sa, handle, dev, SPDRP_CLASS)

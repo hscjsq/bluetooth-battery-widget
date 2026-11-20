@@ -1694,7 +1694,7 @@ class Widget:
 
     def _demo_bubble(self):
         """菜单「测试气泡提醒」：用假数据演示，不写入真实报警状态。"""
-        self.bubble.show([{"name": "OMR251 BT2", "level": 8}],
+        self.bubble.show([{"name": "示例鼠标", "level": 8}],
                          self._alert_threshold(), self.cfg)
 
     # -- 绘制：移动与像素分离，消除「先拉伸旧图再贴新图」的一帧撕裂 ---------

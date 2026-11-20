@@ -36,14 +36,14 @@
   tb_show_name = false  默认。任务栏只画「设备简笔画 + 电量」，不画设备名；
                         改成 true，或右键勾「任务栏显示设备名称」可恢复
   tb_name_chars         显示设备名时最多几个字
-  device_icons          手动指定图标，如 {"OMR251 BT2": "mouse"}；
+  device_icons          手动指定图标，如 {"示例鼠标": "mouse"}；
                         可选 headset/gamepad/speaker/mouse/keyboard/bluetooth
 
 设备图标（按 Windows 真实 PnP 类别判定，不再靠设备名猜）
   BLE 主节点只标 "Bluetooth" 类，程序按 ContainerId 找到同一台设备的
   HID / AudioEndpoint 子节点，用 Mouse、Keyboard、MEDIA 类别或蓝牙
   ClassOfDevice 判断类型，再画对应简笔画。
-  例：OMR251 BT2 → Mouse 节点 → 鼠标形状；vivo TWS 3e → 耳机形状。
+  例：示例鼠标 → Mouse 节点 → 鼠标形状；示例耳机 → 耳机形状。
   多通道设备（BT1 / BT2）会共用同一识别结果。
   线稿统一 22 单位设计坐标系 + 8 倍超采样 + 圆头端点 + LANCZOS 缩小；
   修正了旧版按目标尺寸缩放画布、导致 20px 时图标被裁掉一角的问题。
@@ -63,7 +63,7 @@
         mouse.png / headset.png / gamepad.png / speaker.png /
         keyboard.png / bluetooth.png
   按设备名单独指定（优先于类型图，文件名 = 设备全名）：
-        例：OMR251 BT2.png、vivo TWS 3e.png
+        例：示例鼠标.png、示例耳机.png
   生效：放好后右键「立即刷新」或重启程序，换图会自动重载（按文件时间判断）
   当前已放入 5 张白色线稿：mouse / headset / gamepad / speaker / keyboard；
   bluetooth.png 未放，最左侧蓝牙标识仍用自绘线稿，补同名文件即可替换。
@@ -101,7 +101,7 @@
   多台设备同时低电会合并成一个气泡，最多列 3 行。
   气泡是独立自绘的圆角分层窗口，从任务栏小组件正上方冒出、带指向三角；
   不需要托盘图标，也不依赖系统通知中心（Win11 折叠通知不会漏掉）。
-  右键→设置→「测试气泡提醒」用假数据（OMR251 BT2 8%）预览，不影响真实报警状态。
+  右键→设置→「测试气泡提醒」用假数据（示例鼠标 8%）预览，不影响真实报警状态。
 
 刷新与「新设备马上出现」（三层，互不依赖）
   ① 事件驱动（最快，约 150ms）
