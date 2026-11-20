@@ -1,0 +1,44 @@
+# WorkBuddy 私有数据（记忆、配置，绝不上库）
+.workbuddy/
+
+# 构建产物 / 大二进制（体积大且无版本管理价值）
+*.exe
+*.exe.bak_*
+*.zip
+*.spec
+_dist/
+_work/
+_share_verify/
+build/
+dist/
+
+# 本机回滚备份（含 exe 与 zip，仅本地保留）
+备份-*/
+
+# Python 编译产物与 vendored 依赖（用 pip install Pillow 代替）
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyi
+.pytest_cache/
+vendor/
+python_path.txt
+
+# 运行时生成（含设备名，属本机数据）
+alert_state.json
+
+# 临时诊断 / 构建脚本
+_build_*.py
+_rollback*.py
+_fix_*.py
+_verify_*.py
+_bt_widget_before_rollback.py
+_screen_*.png
+_verify_*.png
+_taskbar_*.png
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
